@@ -30,7 +30,8 @@ from ml_engine import (
 app  = Flask(__name__)
 CORS(app)
 
-DATA_DIR = os.path.join(os.path.dirname(__file__), "..", "data")
+import tempfile
+DATA_DIR = os.path.join(tempfile.gettempdir(), "demand_data")
 CSV_PATH = os.path.join(DATA_DIR, "walmart_sales.csv")
 DB_PATH  = os.path.join(DATA_DIR, "forecast.db")
 
